@@ -31,6 +31,7 @@ $(document).ready(function(){
 	$('.transactions').html(renderTransactions(fullTransactionData));
 	
 	$('.search-input').on('input', function(e) {
+		debugger;
 		var searchString = e.target.value.toLowerCase();
 		var filteredData = _.filter(fullTransactionData, function(transaction){
 			var foundInName    = transaction.name.toLowerCase().indexOf(searchString) > -1;
