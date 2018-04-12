@@ -78,7 +78,8 @@ li.active {
     width: 170px;
     height: 36px;
     border-radius: 8px;
-    padding-top: 13px;
+	padding-top: 13px;
+	background-color: #15D642;
     font-weight: bold;
     font-size: 20px;
     cursor: pointer;
