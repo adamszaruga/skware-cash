@@ -6,14 +6,15 @@
 function renderTransactions(transactions) {
 	var finalHTML = '<div class="buffer">TRANSACTIONS</div>';
 
-	var transactionsHTML = _.map(transactions, function(transaction) {
-		var transactionHTML = '<div class="transaction">';
-		transactionHTML += '<div class="name">'   + transaction.name   + '</div>';
-		transactionHTML += '<div class="for">' 	  + transaction.for    + '</div>';
-		transactionHTML += '<div class="date">'   + transaction.date   + '</div>';
-		transactionHTML += '<div class="amount">' + transaction.amount + '</div>';
-		transactionHTML += '</div>';
-
+	var transactionsHTML = transactions.map(function(transaction) {
+		var transactionHTML = `
+		<div class="transaction">
+			<div class="name">${transaction.name}</div>
+			<div class="for">${transaction.for}</div>
+			<div class="date">${transaction.date}</div>
+			<div class="amount">${transaction.amount}</div>
+		</div>
+		`
 		return transactionHTML;
 	});
 
@@ -27,13 +28,12 @@ function renderTransactions(transactions) {
 //   Listens for keyboard input to filter the list of 
 //   transactions based on the search string. 
 //*******************************************************
-$(document).ready(function(){
-	$('.transactions').html(renderTransactions(fullTransactionData));
+document.addEventListener("DOMContentLoaded", function(){
+	document.getElementById('transactions').innerHTML = renderTransactions(fullTransactionData);
 	
-	$('.search-input').on('input', function(e) {
-		debugger;
+	document.getElementById('search-input').addEventListener('input', function(e) {
 		var searchString = e.target.value.toLowerCase();
-		var filteredData = _.filter(fullTransactionData, function(transaction){
+		var filteredData = fullTransactionData.filter(function(transaction){
 			var foundInName    = transaction.name.toLowerCase().indexOf(searchString) > -1;
 			var foundInFor     = transaction.for.toLowerCase().indexOf(searchString) > -1;
 			var foundInDate    = transaction.date.toLowerCase().indexOf(searchString) > -1;
@@ -41,7 +41,7 @@ $(document).ready(function(){
 			return foundInName || foundInFor || foundInDate || foundInAmount;
 		});
 
-		$('.transactions').html(renderTransactions(filteredData));
+		document.getElementById('transactions').innerHTML = renderTransactions(filteredData);
 	});
 
 });
