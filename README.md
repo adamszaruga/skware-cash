@@ -2,7 +2,7 @@
 
 Welcome! Skware Cash is a simple clone of Square Cash designed to be a playground for Chrome DevTools. Please note that this isn't a complete clone - only the transactions list has been rebuilt.
 
-You will find a folder named "working" and 8 folders named "bug". Each of them contain nearly identical copies of these 5 files:
+You will find 8 folders named "bug". Each of them contain nearly identical copies of these 5 files:
 
 - bug-report.txt
 - index.html
