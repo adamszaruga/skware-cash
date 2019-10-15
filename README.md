@@ -12,4 +12,5 @@ You will find 8 folders named "bug". Each of them contain nearly identical copie
 
 Your task is to discover and patch the bugs in each of the bug folders! Begin by reading the bug-report.txt and then using Chrome's DevTools to uncover the bug's underlying issue. 
 
+test
 The last two bugs are a bit tough! Remember, Google is your friend - don't be afraid to search the web for possible solutions.
