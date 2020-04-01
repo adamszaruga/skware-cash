@@ -81,7 +81,8 @@ li.active {
     padding-top: 13px;
     font-weight: bold;
     font-size: 20px;
-    cursor: pointer;
+	cursor: pointer;
+	background-color: #15D642;
 }
 
 .new:hover {
