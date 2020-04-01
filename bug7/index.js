@@ -18,7 +18,7 @@ function renderTransactions(transactions) {
 		return transactionHTML;
 	});
 
-	finalHTML += transactionsHTML.join();
+	finalHTML += transactionsHTML.join('');
 
 	return finalHTML;
 }
